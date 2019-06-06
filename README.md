@@ -1,22 +1,26 @@
 # De verjaardagswensen kata
 
-Professioneel gestolen van [http://matteo.vaccari.name/blog/archives/154].
+"Geleend" van ()[http://matteo.vaccari.name/blog/archives/154].
 
 ## Probleem
 
-1. Lees een lijst van werknemer records van een flat file.
+1. Lees een lijst van werknemer records van een csv bestand.
 2. Stuur een verjaardagsmail naar elke werknemer die vandaag verjaart.
 
-De flat file is in het csv formaat:
+De eerste lijnen van het csv bestand zijn als volgt:
 
+```
 last_name, first_name, date_of_birth, email
 Doe, John, 1982/10/08, john.doe@example.com
 Ann, Mary, 1975/09/11, mary.ann@example.com
+```
 
 De verjaardagsmail heeft de volgende text:
 
-    Subject: Gelukkige Verjaardag
-    Gelukkige verjaardag, beste John
+```
+Subject: Gelukkige Verjaardag
+Gelukkige verjaardag, beste John
+```
 
 Waar John wordt vervangen door de `first_name` van de werknemer.
 
