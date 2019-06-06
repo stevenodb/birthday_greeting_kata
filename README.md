@@ -1,6 +1,6 @@
 # De verjaardagswensen kata
 
-"Geleend" van ()[http://matteo.vaccari.name/blog/archives/154].
+"Geleend" van <http://matteo.vaccari.name/blog/archives/154>.
 
 ## Probleem
 
