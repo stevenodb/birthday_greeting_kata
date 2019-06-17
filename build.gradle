@@ -32,4 +32,4 @@ dependencies {
 }
 
 // Define the main class for the application
-mainClassName = 'App'
+mainClassName = 'it.xpug.kata.birthday_greetings.Main'
