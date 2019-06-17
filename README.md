@@ -44,6 +44,11 @@ Het doel van deze kata is om een oplossing te vinden die:
   een database komt. Of we willen geen email sturen, maar via Facebook of zo.
 * een goed design heeft; deel business logica op van infrastructuur.
 
+## Opgave
+
+Er is 1 falende test, los die op.
+Refactor dan de code naar het 'Ports and Adapters' patroon.
+
 ## Optionele requirement
 
 Dit is een optioneel  requirement.
