@@ -1,7 +1,12 @@
-package it.xpug.kata.birthday_greetings;
+package com.cegeka.birthday;
 
 import static org.junit.Assert.*;
 
+import com.cegeka.birthday.application.BirthdayService;
+import com.cegeka.birthday.domain.MessagingService;
+import com.cegeka.birthday.domain.EmployeeRepo;
+import com.cegeka.birthday.infrastructure.EmailServiceImpl;
+import com.cegeka.birthday.infrastructure.EmployeeRepoImpl;
 import org.junit.*;
 
 import com.dumbster.smtp.*;
@@ -19,7 +24,9 @@ public class AcceptanceTest {
     @Before
     public void setUp() throws Exception {
         mailServer = SimpleSmtpServer.start(NONSTANDARD_PORT);
-        birthdayService = new BirthdayService();
+        MessagingService messagingService = new EmailServiceImpl("localhost", NONSTANDARD_PORT, "sender@here.com");
+        EmployeeRepo employeeRepo = new EmployeeRepoImpl("employee_data.txt");
+        birthdayService = new BirthdayService(messagingService, employeeRepo);
     }
 
     @After
@@ -31,7 +38,7 @@ public class AcceptanceTest {
     @Test
     public void willSendGreetings_whenItsSomebodysBirthday() throws Exception {
 
-        birthdayService.sendGreetings("employee_data.txt", LocalDate.of(2008, 10, 8), "localhost", NONSTANDARD_PORT);
+        birthdayService.sendGreetings(LocalDate.of(2008, 10, 8));
 
         assertEquals("message not sent?", 1, mailServer.getReceivedEmails().size());
         SmtpMessage message = mailServer.getReceivedEmails().get(0);
@@ -44,7 +51,7 @@ public class AcceptanceTest {
 
     @Test
     public void willNotSendEmailsWhenNobodysBirthday() throws Exception {
-        birthdayService.sendGreetings("employee_data.txt", LocalDate.of(2008, 1, 1), "localhost", NONSTANDARD_PORT);
+        birthdayService.sendGreetings(LocalDate.of(2008, 1, 1));
 
         assertEquals("what? messages?", 0, mailServer.getReceivedEmails().size());
     }

@@ -1,6 +1,7 @@
-package it.xpug.kata.birthday_greetings;
+package com.cegeka.birthday;
 import static org.junit.Assert.*;
 
+import com.cegeka.birthday.domain.Employee;
 import org.junit.*;
 
 import java.time.LocalDate;
