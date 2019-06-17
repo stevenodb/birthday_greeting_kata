@@ -23,10 +23,12 @@ repositories {
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     implementation 'com.google.guava:guava:27.0.1-jre'
+    compile group: 'javax.mail', name: 'mail', version: '1.4.1'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
     testCompile 'org.assertj:assertj-core:3.11.1'
+    testCompile 'com.github.kirviq:dumbster:1.7.1'
 }
 
 // Define the main class for the application
