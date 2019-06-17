@@ -7,3 +7,6 @@ build
 # Ignore intellij stuff
 out
 .idea
+
+# Ignore Powerpoint stuff
+~$*
